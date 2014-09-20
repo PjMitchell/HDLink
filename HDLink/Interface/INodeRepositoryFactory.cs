@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HDLink.Interface
+namespace HDLink
 {
     /// <summary>
     /// Generates Node Repository from INodeType

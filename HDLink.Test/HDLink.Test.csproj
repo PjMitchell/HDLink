@@ -113,7 +113,10 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mocks\MockLinkRepository.cs" />
+    <Compile Include="Mocks\MockNodeRepositories.cs" />
     <Compile Include="Mocks\MockNodeType.cs" />
+    <Compile Include="NodeServiceTest.cs" />
     <Compile Include="NodeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

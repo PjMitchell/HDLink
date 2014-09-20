@@ -14,7 +14,14 @@ namespace HDLink
         /// Gets INode by Id
         /// </summary>
         /// <param name="id">Node Id</param>
-        /// <returns>INode</returns>
+        /// <returns>Matching INode</returns>
         INode Get(int id);
+
+        /// <summary>
+        /// Gets INodes by Ids
+        /// </summary>
+        /// <param name="ids">Node Ids</param>
+        /// <returns>Matching NIodes </returns>
+        IEnumerable<INode> Get(IEnumerable<int> ids);
     }
 }

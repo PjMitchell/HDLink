@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HDLink.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,13 +39,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\LinkFlow.cs" />
+    <Compile Include="Interface\INodeService.cs" />
     <Compile Include="Interface\ILink.cs" />
     <Compile Include="Interface\ILinkRepository.cs" />
     <Compile Include="Interface\INode.cs" />
     <Compile Include="Interface\INodeRepository.cs" />
     <Compile Include="Interface\INodeRepositoryFactory.cs" />
     <Compile Include="Interface\INodeType.cs" />
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Models\Node.cs" />
+    <Compile Include="Service\NodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

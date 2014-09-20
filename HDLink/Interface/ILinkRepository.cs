@@ -16,10 +16,18 @@ namespace HDLink
         IEnumerable<ILink> Get();
 
         /// <summary>
-        /// Gets all ILinks for a INode
+        /// Gets all ILinks from an INode
         /// </summary>
-        /// <param name="node">INode</param>
+        /// <param name="node">INode that is Souce of Link</param>
         /// <returns>Avaliable ILinks for INode</returns>
         IEnumerable<ILink> Get(INode node);
+
+        /// <summary>
+        /// Get all ILinks from an INode that match INodeType
+        /// </summary>
+        /// <param name="node">INode that is Souce of Link</param>
+        /// <param name="nodeType">INodeType To filter on</param>
+        /// <returns></returns>
+        IEnumerable<ILink> Get(INode node, INodeType nodeType);
     }
 }
