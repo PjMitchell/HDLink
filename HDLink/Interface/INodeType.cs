@@ -8,7 +8,7 @@ namespace HDLink
     /// <summary>
     /// Represents a the Type of Node
     /// </summary>
-    public interface INodeType
+    public interface INodeType : IEqualityComparer<INodeType>
     {
         /// <summary>
         /// Id used for Identifying INodeType

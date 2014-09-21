@@ -47,7 +47,9 @@
     <Compile Include="Interface\INodeRepositoryFactory.cs" />
     <Compile Include="Interface\INodeType.cs" />
     <Compile Include="Models\Link.cs" />
+    <Compile Include="Models\LinkType.cs" />
     <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\NodeType.cs" />
     <Compile Include="Service\NodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

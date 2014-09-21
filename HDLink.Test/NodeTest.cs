@@ -31,19 +31,19 @@ namespace HDLink.Test
         [TestMethod]
         public void Node_EqualitiesWorks()
         {
-            
-            Assert.AreEqual(new Node(1, new MockNodeType{Id =2}), new Node(1, new MockNodeType{Id =2}));
-            Assert.AreNotEqual(new Node(2, new MockNodeType { Id = 2 }), new Node(1, new MockNodeType { Id = 2 }));
-            Assert.AreNotEqual(new Node(2, new MockNodeType { Id = 2 }), new Node(2, new MockNodeType { Id =1 }));
+
+            Assert.AreEqual(new Node(1, MockNodeType.Actor), new Node(1, MockNodeType.Actor));
+            Assert.AreNotEqual(new Node(2, MockNodeType.Actor), new Node(1, MockNodeType.Actor));
+            Assert.AreNotEqual(new Node(2, MockNodeType.Actor), new Node(2, MockNodeType.Story));
         }
 
         [TestMethod]
         public void Node_CheckBehaviorInHashSets()
         {
-            var node1 = new Node(1, new MockNodeType { Id = 2 });
-            var node2 = new Node(2, new MockNodeType { Id = 1 });
-            var node3 = new Node(1, new MockNodeType { Id = 1 });
-            var node4 = new Node(2, new MockNodeType { Id = 2 });
+            var node1 = new Node(1, MockNodeType.Story);
+            var node2 = new Node(2, MockNodeType.Actor);
+            var node3 = new Node(1, MockNodeType.Actor);
+            var node4 = new Node(3, MockNodeType.Story);
 
             var hashSet = new HashSet<Node>(new[] { node1, node2, node3, node1, node3 });
 

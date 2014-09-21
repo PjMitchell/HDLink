@@ -117,6 +117,7 @@
     <Compile Include="Mocks\MockNodeRepositories.cs" />
     <Compile Include="Mocks\MockNodeType.cs" />
     <Compile Include="NodeServiceTest.cs" />
+    <Compile Include="NodeTypeTests.cs" />
     <Compile Include="NodeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

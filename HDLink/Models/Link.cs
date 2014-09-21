@@ -41,7 +41,11 @@ namespace HDLink
         /// Direction of Link
         /// </summary>
         public LinkFlow Direction { get; set; }
-        
+
+        /// <summary>
+        /// Type of Link
+        /// </summary>
+        public LinkType Type { get; set; }
     }
 
     /// <summary>

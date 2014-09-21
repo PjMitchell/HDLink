@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace HDLink.Test.Mocks
 {
-    class MockNodeType : INodeType
+    class MockNodeType : NodeType
     {
+        public MockNodeType(int id, string repositoryKey)
+            : base(id, repositoryKey) { }
+       
 
-        public int Id { get; set; }
-        public string NodeTypeRepositoryKey { get; set; }
+        public static MockNodeType Story { get { return new MockNodeType(1, "StoryRepository"); } }
+        public static MockNodeType Actor { get { return new MockNodeType(2,"ActorRepository" ); } }      
 
-        public static MockNodeType Story { get { return new MockNodeType { Id = 1, NodeTypeRepositoryKey = "StoryRepository" }; } }
-        public static MockNodeType Actor { get { return new MockNodeType {Id =2, NodeTypeRepositoryKey ="ActorRepository" }; } }
     }
 
     class ActorNode : INode
@@ -28,7 +29,17 @@ namespace HDLink.Test.Mocks
         public static ActorNode PigWithStraw { get { return new ActorNode { Id = 4, Name = "Pig With Straw" }; } }
         public static ActorNode PigWithWood { get { return new ActorNode { Id = 5, Name = "Pig With Wood" }; } }
         public static ActorNode PigWithBrick { get { return new ActorNode { Id = 6, Name = "Pig With Brick" }; } }
-        
+
+        public override bool Equals(object obj)
+        {
+            var node = obj as ActorNode;
+            return node != null && node.Id == Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id;                
+        }
     }
 
     class StoryNode : INode
@@ -39,6 +50,16 @@ namespace HDLink.Test.Mocks
 
         public static StoryNode RedRidingHood { get { return new StoryNode { Id = 1, Title = "Red Riding Hood" }; } }
         public static StoryNode ThreeLittlePigs { get { return new StoryNode { Id = 2, Title = "Three Little Pigs" }; } }
+        
+        public override bool Equals(object obj)
+        {
+            var node = obj as StoryNode;
+            return node != null && node.Id == Id;
+        }
 
+        public override int GetHashCode()
+        {
+            return Id;
+        }
     }
 }

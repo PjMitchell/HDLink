@@ -14,7 +14,7 @@ namespace HDLink
         /// Simplest representation of a node
         /// </summary>
         /// <param name="id">Node Id</param>
-        /// <param name="nodeType"> Node Type</param>
+        /// <param name="nodeType">Node Type</param>
         public Node(int id, INodeType nodeType)
         {
             Id = id;
