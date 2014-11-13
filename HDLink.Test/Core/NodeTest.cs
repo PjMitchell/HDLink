@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+
 using HDLink.Test.Mocks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace HDLink.Test
+namespace HDLink.Test.Core
 {
     [TestClass]
     public class NodeTest

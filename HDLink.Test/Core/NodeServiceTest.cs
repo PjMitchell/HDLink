@@ -1,75 +1,47 @@
-﻿using HDLink.Test.Mocks;
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Telerik.JustMock;
+using HDLink.Test.Mocks;
 
-namespace HDLink.Test
+namespace HDLink.Test.Core
 {
     [TestClass]
     public class NodeServiceTest
     {
         private INodeService target;
-        
+        private ILinkRepository linkRepository;
+        private INodeRepositoryFactory nodeRepoFactory;
+
         [TestInitialize]
         public void Init()
         {
-            target = new NodeService(new MockLinkRepository(), new MockNodeRepositoryFactory());
+            linkRepository = new MockLinkRepository();
+            nodeRepoFactory = new MockNodeRepositoryFactory();
+            target = new NodeService(linkRepository, nodeRepoFactory);
         }
-    
+
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void NodeService_ThrowsNullException_IfLinkRepositoryNull()
         {
-            var exception = false;
-            try
-            {
-                target = new NodeService(null, new MockNodeRepositoryFactory());
-            }
-            catch (ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
-
+            target = new NodeService(null, nodeRepoFactory);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void NodeService_ThrowsNullException_IfNodeRepositoryFactoryNull()
         {
-            var exception = false;
-            try
-            {
-                target = new NodeService(new MockLinkRepository(), null);
-            }
-            catch (ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
-
+            target = new NodeService(linkRepository, null);
         }
 
         #region Get(Node) Tests
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void Get_Node_ThrowsNullException_IfNodeNull()
         {
-            var exception = false;
-            try
-            {
-                var result = target.Get(null);
-            }
-            catch (ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
-
+            var result = target.Get(null);          
         }
 
         [TestMethod]
@@ -83,7 +55,7 @@ namespace HDLink.Test
             Assert.IsTrue(result.Contains(ActorNode.RedRidingHood));
         }
         #endregion
-        
+
         #region Get(Node, NodeType) Tests
         [TestMethod]
         public void Get_Node_NodeType_ThrowsNullException_IfNodeNull()

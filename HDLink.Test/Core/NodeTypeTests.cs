@@ -2,30 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using HDLink.Test.Mocks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace HDLink.Test
+namespace HDLink.Test.Core
 {
     [TestClass]
     public class NodeTypeTest
     {
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void NodeType_ThrowsNullException_IfNodeTYpeNull()
         {
-            var exception = false;
-            try
-            {
-                var node = new NodeType(1, null);
-            }
-            catch(ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
-
+            var node = new NodeType(1, null);
         }
 
         [TestMethod]
