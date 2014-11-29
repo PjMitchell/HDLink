@@ -35,10 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="HDLink.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Enums\LinkFlow.cs" />
     <Compile Include="Interface\INodeService.cs" />
     <Compile Include="Interface\ILink.cs" />
@@ -53,6 +49,9 @@
     <Compile Include="Models\NodeType.cs" />
     <Compile Include="Service\NodeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HDLink.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

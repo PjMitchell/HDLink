@@ -30,6 +30,9 @@ namespace HDLink
         /// </summary>
         LinkFlow Direction { get; }
 
+        /// <summary>
+        /// Type of Link between two Nodes
+        /// </summary>
         LinkType Type { get; }
         
     }
