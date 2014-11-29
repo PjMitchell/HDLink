@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>HDLink</id>
+        <version>1.0.0-CI00002</version>
+        <authors>Peter Mitchell</authors>
+        <owners>Peter Mitchell</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Description</description>
+    </metadata>
+    <files>
+        <file src="lib\portable-net45+sl50+win+wpa81+wp80\HDLink.dll" target="lib\portable-net45+sl50+win+wpa81+wp80\HDLink.dll" />
+    </files>
+</package>

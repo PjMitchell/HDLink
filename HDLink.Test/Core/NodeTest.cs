@@ -13,20 +13,10 @@ namespace HDLink.Test.Core
     public class NodeTest
     {
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void Node_ThrowsNullException_IfNodeTYpeNull()
         {
-            var exception = false;
-            try
-            {
-                var node = new Node(1, null);
-            }
-            catch(ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
-
+            var node = new Node(1, null);
         }
 
         [TestMethod]
