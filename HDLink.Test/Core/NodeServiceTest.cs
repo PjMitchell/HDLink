@@ -58,35 +58,17 @@ namespace HDLink.Test.Core
 
         #region Get(Node, NodeType) Tests
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void Get_Node_NodeType_ThrowsNullException_IfNodeNull()
         {
-            var exception = false;
-            try
-            {
-                var result = target.Get(null, MockNodeType.Story);
-            }
-            catch (ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
+            var result = target.Get(null, MockNodeType.Story);
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void Get_Node_NodeType_ThrowsNullException_IfNodeTypeNull()
         {
-            var exception = false;
-            try
-            {
-                var result = target.Get(ActorNode.BigBadWolf, null);
-            }
-            catch (ArgumentNullException e)
-            {
-                exception = true;
-            }
-
-            Assert.IsTrue(exception);
+            var result = target.Get(ActorNode.BigBadWolf, null);
         }
 
         [TestMethod]
