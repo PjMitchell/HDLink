@@ -18,7 +18,19 @@ namespace HDLink.Test.Mocks
         }
     }
 
-    public class ActorRepository : INodeRepository
+    public class MockAsyncNodeRepositoryFactory : IAsyncNodeRepositoryFactory
+    {
+        public IAsyncNodeRepository CreateRepository(INodeType nodeType)
+        {
+            if (nodeType.Id == MockNodeType.Actor.Id)
+                return new ActorRepository();
+            if (nodeType.Id == MockNodeType.Story.Id)
+                return new StoryRepository();
+            throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    public class ActorRepository : INodeRepository, IAsyncNodeRepository
     {
         public INode Get(int id)
         {
@@ -42,10 +54,24 @@ namespace HDLink.Test.Mocks
                 ActorNode.RedRidingHood
             };
         }
+
+        public Task<INode> GetAsync(int id)
+        {
+            var tsc = new TaskCompletionSource<INode>();
+            tsc.SetResult(Get(id));
+            return tsc.Task;
+        }
+
+        public Task<List<INode>> GetAsync(IEnumerable<int> ids)
+        {
+            var tsc = new TaskCompletionSource<List<INode>>();
+            tsc.SetResult(Get(ids).ToList());
+            return tsc.Task;
+        }
     }
 
 
-    public class StoryRepository : INodeRepository
+    public class StoryRepository : INodeRepository, IAsyncNodeRepository
     {
         public INode Get(int id)
         {
@@ -56,6 +82,20 @@ namespace HDLink.Test.Mocks
         {
             var idSet = new HashSet<int>(ids);
             return Source().Where(s => idSet.Contains(s.Id));
+        }
+
+        public Task<INode> GetAsync(int id)
+        {
+            var tsc = new TaskCompletionSource<INode>();
+            tsc.SetResult(Get(id));
+            return tsc.Task;
+        }
+
+        public Task<List<INode>> GetAsync(IEnumerable<int> ids)
+        {
+            var tsc = new TaskCompletionSource<List<INode>>();
+            tsc.SetResult(Get(ids).ToList());
+            return tsc.Task;
         }
 
         private List<INode> Source()

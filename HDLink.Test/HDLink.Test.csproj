@@ -65,6 +65,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Core\AsyncNodeServiceTest.cs" />
     <Compile Include="Core\NodeServiceTest.cs" />
     <Compile Include="Core\NodeTest.cs" />
     <Compile Include="Core\NodeTypeTests.cs" />
