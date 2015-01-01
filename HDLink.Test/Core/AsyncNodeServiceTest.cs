@@ -82,5 +82,38 @@ namespace HDLink.Test.Core
             Assert.IsTrue(result.Contains(StoryNode.ThreeLittlePigs));
         }
         #endregion
+
+        #region Get<T>(Node, NodeType) Tests
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public async Task Get_T_Node_NodeType_ThrowsNullException_IfNodeNull()
+        {
+            var result = await target.Get<StoryNode>(null, MockNodeType.Story);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public async Task Get_T_Node_NodeType_ThrowsNullException_IfNodeTypeNull()
+        {
+            var result = await target.Get<StoryNode>(ActorNode.BigBadWolf, null);
+        }
+
+        [TestMethod]
+        public async Task Get_T_Node_NodeType_ReturnsCorrectResult()
+        {
+            var result = await target.Get<StoryNode>(ActorNode.BigBadWolf, MockNodeType.Story);
+
+            Assert.AreEqual(2, result.Count);
+            Assert.IsTrue(result.Contains(StoryNode.RedRidingHood));
+            Assert.IsTrue(result.Contains(StoryNode.ThreeLittlePigs));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidCastException))]
+        public async Task Get_T_Node_NodeType_ThrowsCastExceptionIfWrongType()
+        {
+            var result = await target.Get<ActorNode>(ActorNode.BigBadWolf, MockNodeType.Story);
+        }
+        #endregion
     }
 }

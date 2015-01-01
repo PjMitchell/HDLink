@@ -13,6 +13,7 @@ namespace HDLink
     {
         private readonly IAsyncLinkRepository linkRepository;
         private readonly IAsyncNodeRepositoryFactory repositoryFactory;
+        private static readonly BaseNodeEqualityComparator equalityComparer = new BaseNodeEqualityComparator();
         
         /// <summary>
         /// Simple Implementation of INodeService
@@ -41,7 +42,7 @@ namespace HDLink
                 throw new ArgumentNullException("node");
 
             var linksForNode = await linkRepository.GetAsync(node);
-            var equalityComparer = new BaseNodeEqualityComparator();
+            
             var groups = linksForNode
                 .Flatten()
                 .RemoveNode(node)
@@ -66,27 +67,54 @@ namespace HDLink
         /// <returns>Nodes connected source node</returns>
         public async Task<List<INode>> Get(INode node, INodeType nodeType)
         {
-            if (node == null)
-                throw new ArgumentNullException("node");
-            if (nodeType == null)
-                throw new ArgumentNullException("nodeType");
+            CheckParameters(node, nodeType);
             var linksForNode =  await linkRepository.GetAsync(node);
-            var equalityComparer = new BaseNodeEqualityComparator();
+            var requiredIds = GetIdsForNodeType(nodeType, linksForNode);
+            return await GetNodesFromRepository(nodeType, requiredIds);
 
+        }
+
+        /// <summary>
+        /// Gets All nodes of selected INodeType connected to source node cast to an expected nodetype
+        /// </summary>
+        /// <typeparam name="T">Type of INode to be cast to</typeparam>
+        /// <param name="node">Source node</param>
+        /// <param name="nodeType">Node type to filter nodes on</param>
+        /// <returns>Nodes connected source node</returns>
+        public async Task<List<T>> Get<T>(INode node, INodeType nodeType) where T : INode
+        {
+            CheckParameters(node, nodeType);
+            var linksForNode = await linkRepository.GetAsync(node);
+            var requiredIds = GetIdsForNodeType(nodeType, linksForNode);
+            var rawList = await GetNodesFromRepository(nodeType, requiredIds);
+            return rawList.Cast<T>().ToList();
+        }
+        private static IEnumerable<int> GetIdsForNodeType(INodeType nodeType, List<ILink> linksForNode)
+        {
             var requiredIds = linksForNode
                 .Flatten()
                 .Where(n => n.NodeType.Equals(nodeType))
                 .Distinct(equalityComparer)
                 .Select(n => n.Id);
-            return await GetNodesFromRepository(nodeType, requiredIds);
+            return requiredIds;
+        }  
 
+        private static void CheckParameters(INode node, INodeType nodeType)
+        {
+            if (node == null)
+                throw new ArgumentNullException("node");
+            if (nodeType == null)
+                throw new ArgumentNullException("nodeType");
         }
-        
+
         private Task<List<INode>> GetNodesFromRepository(INodeType nodeType, IEnumerable<int> ids)
         {
             var repo = repositoryFactory.CreateRepository(nodeType);
             return repo.GetAsync(ids);
         }
+
+
+
         
     }
 }
