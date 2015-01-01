@@ -78,13 +78,13 @@ namespace HDLink
         /// </summary>
         /// <param name="id">Node Id</param>
         /// <returns>Matching INode</returns>
-        Task<T> Get(int id);
+        Task<T> GetAsync(int id);
 
         /// <summary>
         /// Gets INodes by Ids
         /// </summary>
         /// <param name="ids">Node Ids</param>
         /// <returns>Matching NIodes </returns>
-        Task<List<T>> Get(IEnumerable<int> ids);
+        Task<List<T>> GetAsync(IEnumerable<int> ids);
     }
 }
