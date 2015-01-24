@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HDLink.Test.Mocks
 {
-    class MockLinkRepository : ILinkRepository
+    class MockLinkRepository : ILinkRepository, IAsyncLinkRepository
     {
         public IEnumerable<ILink> Get()
         {
@@ -39,6 +39,27 @@ namespace HDLink.Test.Mocks
         private bool INodeEqual(INode one, INode two)
         {
             return one.Id == two.Id && one.NodeType.Id == two.NodeType.Id;
+        }
+
+        public Task<List<ILink>> GetAsync()
+        {
+            var tsc = new TaskCompletionSource<List<ILink>>();
+            tsc.SetResult(Get().ToList());
+            return tsc.Task;
+        }
+
+        public Task<List<ILink>> GetAsync(INode node)
+        {
+            var tsc = new TaskCompletionSource<List<ILink>>();
+            tsc.SetResult(Get(node).ToList());
+            return tsc.Task;
+        }
+
+        public Task<List<ILink>> GetAsync(INode node, INodeType nodeType)
+        {
+            var tsc = new TaskCompletionSource<List<ILink>>();
+            tsc.SetResult(Get(node, nodeType).ToList());
+            return tsc.Task;
         }
     }
 
