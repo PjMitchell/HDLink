@@ -62,20 +62,20 @@ namespace HDLink.Test.Core
         [ExpectedException(typeof(ArgumentNullException))]
         public async Task Get_Node_NodeType_ThrowsNullException_IfNodeNull()
         {
-            var result = await target.Get(null, MockNodeType.Story);
+            var result = await target.Get(null, MockNodeTypes.Story);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public async Task Get_Node_NodeType_ThrowsNullException_IfNodeTypeNull()
         {
-            var result = await target.Get(ActorNode.BigBadWolf, null);
+            var result = await target.Get(ActorNode.BigBadWolf, (INodeType<StoryNode>)null);
         }
 
         [TestMethod]
         public async Task Get_Node_NodeType_ReturnsCorrectResult()
         {
-            var result = await target.Get(ActorNode.BigBadWolf, MockNodeType.Story);
+            var result = await target.Get(ActorNode.BigBadWolf, MockNodeTypes.Story);
 
             Assert.AreEqual(2, result.Count);
             Assert.IsTrue(result.Contains(StoryNode.RedRidingHood));
@@ -88,7 +88,7 @@ namespace HDLink.Test.Core
         [ExpectedException(typeof(ArgumentNullException))]
         public async Task Get_T_Node_NodeType_ThrowsNullException_IfNodeNull()
         {
-            var result = await target.Get<StoryNode>(null, MockNodeType.Story);
+            var result = await target.Get<StoryNode>(null, MockNodeTypes.Story);
         }
 
         [TestMethod]
@@ -101,19 +101,13 @@ namespace HDLink.Test.Core
         [TestMethod]
         public async Task Get_T_Node_NodeType_ReturnsCorrectResult()
         {
-            var result = await target.Get<StoryNode>(ActorNode.BigBadWolf, MockNodeType.Story);
+            var result = await target.Get<StoryNode>(ActorNode.BigBadWolf, MockNodeTypes.Story);
 
             Assert.AreEqual(2, result.Count);
             Assert.IsTrue(result.Contains(StoryNode.RedRidingHood));
             Assert.IsTrue(result.Contains(StoryNode.ThreeLittlePigs));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidCastException))]
-        public async Task Get_T_Node_NodeType_ThrowsCastExceptionIfWrongType()
-        {
-            var result = await target.Get<ActorNode>(ActorNode.BigBadWolf, MockNodeType.Story);
-        }
         #endregion
     }
 }

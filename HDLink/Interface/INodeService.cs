@@ -24,7 +24,7 @@ namespace HDLink
         /// <param name="node">Source node</param>
         /// <param name="nodeType">Node type to filter nodes on</param>
         /// <returns>Nodes connected source node</returns>
-        IEnumerable<INode> Get(INode node, INodeType nodeType);
+        IEnumerable<T> Get<T>(INode node, INodeType<T> nodeType) where T : INode;
     }
 
     /// <summary>
@@ -45,17 +45,7 @@ namespace HDLink
         /// <param name="node">Source node</param>
         /// <param name="nodeType">Node type to filter nodes on</param>
         /// <returns>Nodes connected source node</returns>
-        Task<List<INode>> Get(INode node, INodeType nodeType);
+        Task<List<T>> Get<T>(INode node, INodeType<T> nodeType) where T : INode;
 
- 
-        
-        /// <summary>
-        /// Gets All nodes of selected INodeType connected to source node cast to an expected nodetype
-        /// </summary>
-        /// <typeparam name="T">Type of INode to be cast to</typeparam>
-        /// <param name="node">Source node</param>
-        /// <param name="nodeType">Node type to filter nodes on</param>
-        /// <returns>Nodes connected source node</returns>
-        Task<List<T>> Get<T>(INode node, INodeType nodeType) where T : INode;
     }
 }

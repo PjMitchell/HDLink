@@ -13,16 +13,16 @@ namespace HDLink.Test.Mocks
 
             return new List<SimpleLink>
             {
-                new SimpleLink { NodeA = new Node(StoryNode.RedRidingHood.Id, MockNodeType.Story),   NodeB = new Node(ActorNode.RedRidingHood.Id, MockNodeType.Actor)   , Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(StoryNode.RedRidingHood.Id, MockNodeType.Story),   NodeB = new Node(ActorNode.BigBadWolf.Id, MockNodeType.Actor)      , Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(StoryNode.RedRidingHood.Id, MockNodeType.Story),   NodeB = new Node(ActorNode.GrannyRidingHood.Id, MockNodeType.Actor), Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeType.Story), NodeB = new Node(ActorNode.BigBadWolf.Id, MockNodeType.Actor)      , Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeType.Story), NodeB = new Node(ActorNode.PigWithStraw.Id, MockNodeType.Actor)    , Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeType.Story), NodeB = new Node(ActorNode.PigWithWood.Id, MockNodeType.Actor)     , Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeType.Story), NodeB = new Node(ActorNode.PigWithBrick.Id, MockNodeType.Actor)    , Type=MockLinkType.Default },
-                new SimpleLink { NodeA = new Node(ActorNode.RedRidingHood.Id, MockNodeType.Actor), NodeB = new Node(ActorNode.GrannyRidingHood.Id, MockNodeType.Actor)    , Type=MockLinkType.Family },
-                new SimpleLink { NodeA = new Node(ActorNode.BigBadWolf.Id, MockNodeType.Actor), NodeB = new Node(ActorNode.GrannyRidingHood.Id, MockNodeType.Actor)    , Type=MockLinkType.WantToEat },
-                new SimpleLink { NodeA = new Node(ActorNode.BigBadWolf.Id, MockNodeType.Actor), NodeB = new Node(ActorNode.RedRidingHood.Id, MockNodeType.Actor)    , Type=MockLinkType.WantToEat },
+                new SimpleLink { NodeA = new Node(StoryNode.RedRidingHood.Id, MockNodeTypes.Story),   NodeB = new Node(ActorNode.RedRidingHood.Id, MockNodeTypes.Actor)   , Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(StoryNode.RedRidingHood.Id, MockNodeTypes.Story),   NodeB = new Node(ActorNode.BigBadWolf.Id, MockNodeTypes.Actor)      , Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(StoryNode.RedRidingHood.Id, MockNodeTypes.Story),   NodeB = new Node(ActorNode.GrannyRidingHood.Id, MockNodeTypes.Actor), Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeTypes.Story), NodeB = new Node(ActorNode.BigBadWolf.Id, MockNodeTypes.Actor)      , Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeTypes.Story), NodeB = new Node(ActorNode.PigWithStraw.Id, MockNodeTypes.Actor)    , Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeTypes.Story), NodeB = new Node(ActorNode.PigWithWood.Id, MockNodeTypes.Actor)     , Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(StoryNode.ThreeLittlePigs.Id, MockNodeTypes.Story), NodeB = new Node(ActorNode.PigWithBrick.Id, MockNodeTypes.Actor)    , Type=MockLinkType.Default },
+                new SimpleLink { NodeA = new Node(ActorNode.RedRidingHood.Id, MockNodeTypes.Actor), NodeB = new Node(ActorNode.GrannyRidingHood.Id, MockNodeTypes.Actor)    , Type=MockLinkType.Family },
+                new SimpleLink { NodeA = new Node(ActorNode.BigBadWolf.Id, MockNodeTypes.Actor), NodeB = new Node(ActorNode.GrannyRidingHood.Id, MockNodeTypes.Actor)    , Type=MockLinkType.WantToEat },
+                new SimpleLink { NodeA = new Node(ActorNode.BigBadWolf.Id, MockNodeTypes.Actor), NodeB = new Node(ActorNode.RedRidingHood.Id, MockNodeTypes.Actor)    , Type=MockLinkType.WantToEat },
             };
         }
 

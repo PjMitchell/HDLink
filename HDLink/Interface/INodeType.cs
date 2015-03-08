@@ -5,18 +5,21 @@ using System.Text;
 
 namespace HDLink
 {
+        
     /// <summary>
     /// Represents a the Type of Node
     /// </summary>
-    public interface INodeType : IEqualityComparer<INodeType>
+    public interface INodeType<T> :INodeType, IEqualityComparer<INodeType<T>> where T : INode
+    {
+        
+
+    }
+
+    public interface INodeType
     {
         /// <summary>
         /// Id used for Identifying INodeType
         /// </summary>
         int Id { get; }
-        /// <summary>
-        /// Key used to Idenfity Repository for INodeType
-        /// </summary>
-        string NodeTypeRepositoryKey { get;} 
     }
 }

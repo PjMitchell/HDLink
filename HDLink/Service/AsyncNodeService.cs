@@ -65,7 +65,7 @@ namespace HDLink
         /// <param name="node">Source node</param>
         /// <param name="nodeType">Node type to filter nodes on</param>
         /// <returns>Nodes connected source node</returns>
-        public async Task<List<INode>> Get(INode node, INodeType nodeType)
+        public async Task<List<T>> Get<T>(INode node, INodeType<T> nodeType) where T : INode
         {
             CheckParameters(node, nodeType);
             var linksForNode =  await linkRepository.GetAsync(node);
@@ -74,21 +74,6 @@ namespace HDLink
 
         }
 
-        /// <summary>
-        /// Gets All nodes of selected INodeType connected to source node cast to an expected nodetype
-        /// </summary>
-        /// <typeparam name="T">Type of INode to be cast to</typeparam>
-        /// <param name="node">Source node</param>
-        /// <param name="nodeType">Node type to filter nodes on</param>
-        /// <returns>Nodes connected source node</returns>
-        public async Task<List<T>> Get<T>(INode node, INodeType nodeType) where T : INode
-        {
-            CheckParameters(node, nodeType);
-            var linksForNode = await linkRepository.GetAsync(node);
-            var requiredIds = GetIdsForNodeType(nodeType, linksForNode);
-            var rawList = await GetNodesFromRepository(nodeType, requiredIds);
-            return rawList.Cast<T>().ToList();
-        }
         private static IEnumerable<int> GetIdsForNodeType(INodeType nodeType, List<ILink> linksForNode)
         {
             var requiredIds = linksForNode
@@ -107,7 +92,13 @@ namespace HDLink
                 throw new ArgumentNullException("nodeType");
         }
 
-        private Task<List<INode>> GetNodesFromRepository(INodeType nodeType, IEnumerable<int> ids)
+        private Task<List<T>> GetNodesFromRepository<T>(INodeType<T> nodeType, IEnumerable<int> ids) where T : INode
+        {
+            var repo = repositoryFactory.CreateRepository(nodeType);
+            return repo.GetAsync(ids);
+        }
+
+        private Task<List<INode>> GetNodesFromRepository(INodeType nodeType, IEnumerable<int> ids) 
         {
             var repo = repositoryFactory.CreateRepository(nodeType);
             return repo.GetAsync(ids);

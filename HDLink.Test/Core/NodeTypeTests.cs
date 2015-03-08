@@ -11,30 +11,25 @@ namespace HDLink.Test.Core
     [TestClass]
     public class NodeTypeTest
     {
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void NodeType_ThrowsNullException_IfNodeTYpeNull()
-        {
-            var node = new NodeType(1, null);
-        }
 
         [TestMethod]
         public void NodeType_EqualitiesWorks()
         {
 
-            Assert.AreEqual(new NodeType(1, "one"), new NodeType(1, "one"));
-            Assert.AreEqual(new NodeType(1, "one"), new NodeType(1, "two"));
-            Assert.AreNotEqual(new NodeType(1, "one"), new NodeType(2, "two"));
+            Assert.AreEqual(new NodeType<Node>(1), new NodeType<Node>(1));
+            Assert.AreNotEqual(new NodeType<Node>(1), new NodeType<Node>(2));
+            Assert.AreNotEqual(new NodeType<ActorNode>(1), new NodeType<StoryNode>(1));
+
         }
 
         [TestMethod]
         public void NodeType_CheckBehaviorInHashSets()
         {
-            var nodeType1 = new NodeType(1, "one");
-            var nodeType2 = new NodeType(2, "two");
-            var nodeType3 = new NodeType(3, "three");
+            var nodeType1 = new NodeType<Node>(1);
+            var nodeType2 = new NodeType<ActorNode>(2);
+            var nodeType3 = new NodeType<StoryNode>(3);
             
-            var hashSet = new HashSet<NodeType>(new[] { nodeType1, nodeType2, nodeType3, nodeType1, nodeType3 });
+            var hashSet = new HashSet<INodeType>(new List<INodeType> { nodeType1, nodeType2, nodeType3, nodeType1, nodeType3 });
 
             Assert.AreEqual(3, hashSet.Count);
             Assert.IsTrue(hashSet.Contains(nodeType1));

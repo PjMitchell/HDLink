@@ -55,7 +55,7 @@ namespace HDLink
         /// <param name="node">Source node</param>
         /// <param name="nodeType">Node type to filter nodes on</param>
         /// <returns>Nodes connected source node</returns>
-        public IEnumerable<INode> Get(INode node, INodeType nodeType)
+        public IEnumerable<T> Get<T>(INode node, INodeType<T> nodeType) where T : INode
         {
             if (node == null)
                 throw new ArgumentNullException("node");
@@ -74,12 +74,18 @@ namespace HDLink
 
         }
         
+        private IEnumerable<T> GetNodesFromRepository<T>(IGrouping<INodeType<T>, INode> group) where T: INode
+        {
+            var repo = repositoryFactory.CreateRepository(group.Key);
+            return repo.Get(group.Select(s => s.Id));
+        }
+
         private IEnumerable<INode> GetNodesFromRepository(IGrouping<INodeType, INode> group)
         {
             var repo = repositoryFactory.CreateRepository(group.Key);
             return repo.Get(group.Select(s => s.Id));
         }
-        
+
     }
 
     

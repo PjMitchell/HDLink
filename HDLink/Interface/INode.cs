@@ -18,7 +18,7 @@ namespace HDLink
         /// <summary>
         /// Node type for Node
         /// </summary>
-        INodeType NodeType {get;}
+        INodeType NodeType {get;} 
     }
 
     public class BaseNodeEqualityComparator : IEqualityComparer<INode>

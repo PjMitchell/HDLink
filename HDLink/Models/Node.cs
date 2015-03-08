@@ -15,7 +15,7 @@ namespace HDLink
         /// </summary>
         /// <param name="id">Node Id</param>
         /// <param name="nodeType">Node Type</param>
-        public Node(int id, NodeType nodeType)
+        public Node(int id, INodeType nodeType)
         {
             Id = id;
             if (nodeType == null)
@@ -31,7 +31,7 @@ namespace HDLink
         /// <summary>
         /// Node type for Node
         /// </summary>
-        public NodeType NodeType { get; private set; }
+        public INodeType NodeType { get; private set; }
 
 
         #region Equalities
@@ -63,10 +63,7 @@ namespace HDLink
         }
         private int hashcode = 0;
         #endregion
-             
-        INodeType INode.NodeType
-        {
-            get { return NodeType; }
-        }
+          
+
     }
 }

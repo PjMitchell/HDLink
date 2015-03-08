@@ -61,20 +61,20 @@ namespace HDLink.Test.Core
         [ExpectedException(typeof(ArgumentNullException))]
         public void Get_Node_NodeType_ThrowsNullException_IfNodeNull()
         {
-            var result = target.Get(null, MockNodeType.Story);
+            var result = target.Get(null, MockNodeTypes.Story);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Get_Node_NodeType_ThrowsNullException_IfNodeTypeNull()
         {
-            var result = target.Get(ActorNode.BigBadWolf, null);
+            var result = target.Get(ActorNode.BigBadWolf, (INodeType<StoryNode>)null);
         }
 
         [TestMethod]
         public void Get_Node_NodeType_ReturnsCorrectResult()
         {
-            var result = target.Get(ActorNode.BigBadWolf, MockNodeType.Story).ToList();
+            var result = target.Get(ActorNode.BigBadWolf, MockNodeTypes.Story).ToList();
 
             Assert.AreEqual(2, result.Count);
             Assert.IsTrue(result.Contains(StoryNode.RedRidingHood));
