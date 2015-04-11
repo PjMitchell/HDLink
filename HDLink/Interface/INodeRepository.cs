@@ -30,21 +30,21 @@ namespace HDLink
     /// Gets Nodes from data source
     /// </summary>
     /// <typeparam name="T">Node type for Repository</typeparam>
-    public interface INodeRepository<T> where T : INode 
+    public interface INodeRepository<T>: INodeRepository where T : INode 
     {
         /// <summary>
         /// Gets INode by Id
         /// </summary>
         /// <param name="id">Node Id</param>
         /// <returns>Matching INode</returns>
-        T Get(int id);
+        new T Get(int id);
 
         /// <summary>
         /// Gets INodes by Ids
         /// </summary>
         /// <param name="ids">Node Ids</param>
         /// <returns>Matching NIodes </returns>
-        IEnumerable<T> Get(IEnumerable<int> ids);
+        new IEnumerable<T> Get(IEnumerable<int> ids);
     }
 
     /// <summary>
@@ -71,20 +71,20 @@ namespace HDLink
     /// Gets Nodes from data source
     /// </summary>
     /// <typeparam name="T">Node type for Repository</typeparam>
-    public interface IAsyncNodeRepository<T> where T : INode
+    public interface IAsyncNodeRepository<T> : IAsyncNodeRepository where T : INode
     {
         /// <summary>
         /// Gets INode by Id
         /// </summary>
         /// <param name="id">Node Id</param>
         /// <returns>Matching INode</returns>
-        Task<T> GetAsync(int id);
+        new Task<T> GetAsync(int id);
 
         /// <summary>
         /// Gets INodes by Ids
         /// </summary>
         /// <param name="ids">Node Ids</param>
         /// <returns>Matching NIodes </returns>
-        Task<List<T>> GetAsync(IEnumerable<int> ids);
+        new Task<List<T>> GetAsync(IEnumerable<int> ids);
     }
 }
