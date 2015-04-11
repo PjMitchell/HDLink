@@ -69,6 +69,7 @@
     <Compile Include="Core\NodeServiceTest.cs" />
     <Compile Include="Core\NodeTest.cs" />
     <Compile Include="Core\NodeTypeTests.cs" />
+    <Compile Include="Core\OrderedHierarchyTreeTests.cs" />
     <Compile Include="Mocks\MockLinkRepository.cs" />
     <Compile Include="Mocks\MockNodeRepositories.cs" />
     <Compile Include="Mocks\MockNodeType.cs" />

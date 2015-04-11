@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Enums\LinkFlow.cs" />
+    <Compile Include="Models\OrderedHierarchicalTree.cs" />
     <Compile Include="Interface\INodeService.cs" />
     <Compile Include="Interface\ILink.cs" />
     <Compile Include="Interface\ILinkRepository.cs" />
@@ -43,6 +44,8 @@
     <Compile Include="Interface\INodeRepository.cs" />
     <Compile Include="Interface\INodeRepositoryFactory.cs" />
     <Compile Include="Interface\INodeType.cs" />
+    <Compile Include="Interface\IOrderedHierarchyElement.cs" />
+    <Compile Include="Interface\IOrderedHierarchicalTree.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Models\LinkType.cs" />
     <Compile Include="Models\Node.cs" />

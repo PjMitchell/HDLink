@@ -30,7 +30,7 @@ namespace HDLink
     /// Gets Nodes from data source
     /// </summary>
     /// <typeparam name="T">Node type for Repository</typeparam>
-    public interface INodeRepository<T> : INodeRepository where T : INode 
+    public interface INodeRepository<T> where T : INode 
     {
         /// <summary>
         /// Gets INode by Id
@@ -71,7 +71,7 @@ namespace HDLink
     /// Gets Nodes from data source
     /// </summary>
     /// <typeparam name="T">Node type for Repository</typeparam>
-    public interface IAsyncNodeRepository<T> : IAsyncNodeRepository where T : INode
+    public interface IAsyncNodeRepository<T> where T : INode
     {
         /// <summary>
         /// Gets INode by Id

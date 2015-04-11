@@ -21,6 +21,7 @@ namespace HDLink
             if (nodeType == null)
                 throw new ArgumentNullException("nodeType");
             NodeType = nodeType;
+            SetHashCode();
         }
         
         /// <summary>
@@ -35,17 +36,31 @@ namespace HDLink
 
 
         #region Equalities
+        /// <summary>
+        /// Determines whether the object is equal to the Node.
+        /// </summary>
+        /// <param name="obj">The object to compare to.</param>
+        /// <returns>if the object is equal; otherwise, false.</returns>
         public override bool Equals(object obj)
         {
             var node =obj as Node;
             return node != null && Equals(node);
         }
 
+        /// <summary>
+        /// Determines whether the node is equal to the instance.
+        /// </summary>
+        /// <param name="node">The node to compare to.</param>
+        /// <returns>if the node is equal; otherwise, false.</returns>
         public bool Equals(Node node)
         {
             return Id == node.Id && NodeType.Id == node.NodeType.Id;
         }
 
+        /// <summary>
+        /// Returns a hash code for the Node.
+        /// </summary>
+        /// <returns>A hash code for the specified Node.</returns>
         public override int GetHashCode()
         {
             return hashcode;

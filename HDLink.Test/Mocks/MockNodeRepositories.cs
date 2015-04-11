@@ -81,7 +81,7 @@ namespace HDLink.Test.Mocks
     }
 
 
-    public class StoryRepository : INodeRepository<StoryNode>, IAsyncNodeRepository<StoryNode>
+    public class StoryRepository : INodeRepository<StoryNode>,INodeRepository, IAsyncNodeRepository<StoryNode>, IAsyncNodeRepository
     {
         public StoryNode Get(int id)
         {
