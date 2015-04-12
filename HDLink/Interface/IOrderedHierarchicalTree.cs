@@ -14,5 +14,10 @@ namespace HDLink
         /// <param name="hierarchicalLevel">Hierarchical level</param>
         /// <returns>Ordered Enumerable of Elements</returns>
         IEnumerable<T> GetHierarchicalLevel(int hierarchicalLevel);
+
+        /// <summary>
+        /// Gets List of Hierarchies
+        /// </summary>
+        List<int> Hierarchies { get; }
     }
 }

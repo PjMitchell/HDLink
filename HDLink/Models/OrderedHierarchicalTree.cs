@@ -39,5 +39,13 @@ namespace HDLink
         {
             return source[hierarchicalLevel];
         }
+
+        /// <summary>
+        /// Gets List of Hierarchies
+        /// </summary>
+        public List<int> Hierarchies
+        {
+            get { return source.Keys.ToList(); }
+        }
     }
 }
