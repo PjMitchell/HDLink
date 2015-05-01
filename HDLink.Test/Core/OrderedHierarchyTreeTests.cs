@@ -1,14 +1,13 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Xunit;
 
 namespace HDLink.Test.Core
 {
-    [TestClass]
+
     public class OrderedHierarchyTreeTests
     {
-        [TestMethod]
+        [Fact]
         public void CanGetHierarchicalLevel()
         {
             var tree = new OrderedHierarchicalTree<TestHiearchicalElement>(GetTestElements());
@@ -18,13 +17,13 @@ namespace HDLink.Test.Core
 
             var levelOne = tree.GetHierarchicalLevel(1).Select(s => s.Id).ToList();
             var levelTwo = tree.GetHierarchicalLevel(2).Select(s=> s.Id).ToList();
-            CollectionAssert.AreEqual(expectedOne, levelOne);
-            CollectionAssert.AreEqual(expectedTwo, levelTwo);
+            Assert.Equal(expectedOne, levelOne);
+            Assert.Equal(expectedTwo, levelTwo);
 
 
         }
 
-        [TestMethod]
+        [Fact]
         public void CanGetHierarchicalLevelInOrder()
         {
             var tree = new OrderedHierarchicalTree<TestHiearchicalElement>(new List<TestHiearchicalElement>
@@ -35,7 +34,7 @@ namespace HDLink.Test.Core
             var expectedOne = new List<int> { 2, 1 };
 
             var levelOne = tree.GetHierarchicalLevel(1).Select(s => s.Id).ToList();
-            CollectionAssert.AreEqual(expectedOne, levelOne);
+            Assert.Equal(expectedOne, levelOne);
         }
 
         public IEnumerable<TestHiearchicalElement> GetTestElements()

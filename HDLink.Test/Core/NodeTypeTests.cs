@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using HDLink.Test.Mocks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Xunit;
 
 namespace HDLink.Test.Core
 {
-    [TestClass]
+
     public class NodeTypeTest
     {
 
-        [TestMethod]
+        [Fact]
         public void NodeType_EqualitiesWorks()
         {
-
-            Assert.AreEqual(new NodeType<Node>(1), new NodeType<Node>(1));
-            Assert.AreNotEqual(new NodeType<Node>(1), new NodeType<Node>(2));
-            Assert.AreNotEqual(new NodeType<ActorNode>(1), new NodeType<StoryNode>(1));
-
+            Assert.Equal(new NodeType<Node>(1), new NodeType<Node>(1));
+            Assert.NotEqual(new NodeType<Node>(1), new NodeType<Node>(2));
+            Assert.NotEqual((object)new NodeType<ActorNode>(1), (object)new NodeType<StoryNode>(1));
         }
 
-        [TestMethod]
+        [Fact]
         public void NodeType_CheckBehaviorInHashSets()
         {
             var nodeType1 = new NodeType<Node>(1);
@@ -31,10 +25,10 @@ namespace HDLink.Test.Core
             
             var hashSet = new HashSet<INodeType>(new List<INodeType> { nodeType1, nodeType2, nodeType3, nodeType1, nodeType3 });
 
-            Assert.AreEqual(3, hashSet.Count);
-            Assert.IsTrue(hashSet.Contains(nodeType1));
-            Assert.IsTrue(hashSet.Contains(nodeType2));
-            Assert.IsTrue(hashSet.Contains(nodeType3));
+            Assert.Equal(3, hashSet.Count);
+            Assert.True(hashSet.Contains(nodeType1));
+            Assert.True(hashSet.Contains(nodeType2));
+            Assert.True(hashSet.Contains(nodeType3));
             
         }
     }

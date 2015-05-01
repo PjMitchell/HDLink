@@ -1,34 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using HDLink.Test.Mocks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Xunit;
 
 namespace HDLink.Test.Core
 {
-    [TestClass]
+
     public class NodeTest
     {
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public void Node_ThrowsNullException_IfNodeTYpeNull()
         {
-            var node = new Node(1, null);
+            Assert.Throws(typeof(ArgumentNullException), () => new Node(1, null));
         }
 
-        [TestMethod]
+        [Fact]
         public void Node_EqualitiesWorks()
         {
 
-            Assert.AreEqual(new Node(1, MockNodeTypes.Actor), new Node(1, MockNodeTypes.Actor));
-            Assert.AreNotEqual(new Node(2, MockNodeTypes.Actor), new Node(1, MockNodeTypes.Actor));
-            Assert.AreNotEqual(new Node(2, MockNodeTypes.Actor), new Node(2, MockNodeTypes.Story));
+            Assert.Equal(new Node(1, MockNodeTypes.Actor), new Node(1, MockNodeTypes.Actor));
+            Assert.NotEqual(new Node(2, MockNodeTypes.Actor), new Node(1, MockNodeTypes.Actor));
+            Assert.NotEqual(new Node(2, MockNodeTypes.Actor), new Node(2, MockNodeTypes.Story));
         }
 
-        [TestMethod]
+        [Fact]
         public void Node_CheckBehaviorInHashSets()
         {
             var node1 = new Node(1, MockNodeTypes.Story);
@@ -38,11 +33,11 @@ namespace HDLink.Test.Core
 
             var hashSet = new HashSet<Node>(new[] { node1, node2, node3, node1, node3 });
 
-            Assert.AreEqual(3, hashSet.Count);
-            Assert.IsTrue(hashSet.Contains(node1));
-            Assert.IsTrue(hashSet.Contains(node2));
-            Assert.IsTrue(hashSet.Contains(node3));
-            Assert.IsFalse(hashSet.Contains(node4));
+            Assert.Equal(3, hashSet.Count);
+            Assert.True(hashSet.Contains(node1));
+            Assert.True(hashSet.Contains(node2));
+            Assert.True(hashSet.Contains(node3));
+            Assert.False(hashSet.Contains(node4));
 
         }
     }

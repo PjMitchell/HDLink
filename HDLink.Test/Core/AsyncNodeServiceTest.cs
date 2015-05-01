@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Telerik.JustMock;
 using HDLink.Test.Mocks;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace HDLink.Test.Core
 {
-    [TestClass]
     public class AsyncNodeServiceTest
     {
         private IAsyncNodeService target;
         private IAsyncLinkRepository linkRepository;
         private IAsyncNodeRepositoryFactory nodeRepoFactory;
 
-        [TestInitialize]
-        public void Init()
+        public AsyncNodeServiceTest()
         {
             linkRepository = new MockLinkRepository();
             nodeRepoFactory = new MockAsyncNodeRepositoryFactory();
@@ -23,89 +19,82 @@ namespace HDLink.Test.Core
         }
 
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public void NodeService_ThrowsNullException_IfLinkRepositoryNull()
         {
-            target = new AsyncNodeService(null, nodeRepoFactory);
+            Assert.Throws(typeof(ArgumentNullException), () => new AsyncNodeService(null, nodeRepoFactory));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public void NodeService_ThrowsNullException_IfNodeRepositoryFactoryNull()
         {
-            target = new AsyncNodeService(linkRepository, null);
+            Assert.Throws(typeof(ArgumentNullException), () => new AsyncNodeService(linkRepository, null));
         }
 
         #region Get(Node) Tests
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public async Task Get_Node_ThrowsNullException_IfNodeNull()
         {
-            var result = await target.Get(null);          
+            await Assert.ThrowsAsync(typeof(ArgumentNullException), () => target.Get(null));          
         }
 
-        [TestMethod]
+        [Fact]
         public async Task Get_Node_ReturnsCorrectResult()
         {
             var result = await target.Get(StoryNode.RedRidingHood);
 
-            Assert.AreEqual(3, result.Count);
-            Assert.IsTrue(result.Contains(ActorNode.BigBadWolf));
-            Assert.IsTrue(result.Contains(ActorNode.GrannyRidingHood));
-            Assert.IsTrue(result.Contains(ActorNode.RedRidingHood));
+            Assert.Equal(3, result.Count);
+            Assert.True(result.Contains(ActorNode.BigBadWolf));
+            Assert.True(result.Contains(ActorNode.GrannyRidingHood));
+            Assert.True(result.Contains(ActorNode.RedRidingHood));
         }
         #endregion
 
         #region Get(Node, NodeType) Tests
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public async Task Get_Node_NodeType_ThrowsNullException_IfNodeNull()
         {
-            var result = await target.Get(null, MockNodeTypes.Story);
+            await Assert.ThrowsAsync(typeof(ArgumentNullException), () => target.Get(null, MockNodeTypes.Story));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public async Task Get_Node_NodeType_ThrowsNullException_IfNodeTypeNull()
         {
-            var result = await target.Get(ActorNode.BigBadWolf, (INodeType<StoryNode>)null);
+            await Assert.ThrowsAsync(typeof(ArgumentNullException), () => target.Get(ActorNode.BigBadWolf, (INodeType<StoryNode>)null));
         }
 
-        [TestMethod]
+        [Fact]
         public async Task Get_Node_NodeType_ReturnsCorrectResult()
         {
             var result = await target.Get(ActorNode.BigBadWolf, MockNodeTypes.Story);
 
-            Assert.AreEqual(2, result.Count);
-            Assert.IsTrue(result.Contains(StoryNode.RedRidingHood));
-            Assert.IsTrue(result.Contains(StoryNode.ThreeLittlePigs));
+            Assert.Equal(2, result.Count);
+            Assert.True(result.Contains(StoryNode.RedRidingHood));
+            Assert.True(result.Contains(StoryNode.ThreeLittlePigs));
         }
         #endregion
 
         #region Get<T>(Node, NodeType) Tests
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public async Task Get_T_Node_NodeType_ThrowsNullException_IfNodeNull()
         {
-            var result = await target.Get<StoryNode>(null, MockNodeTypes.Story);
+            await Assert.ThrowsAsync(typeof(ArgumentNullException), () => target.Get(null, MockNodeTypes.Story));
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public async Task Get_T_Node_NodeType_ThrowsNullException_IfNodeTypeNull()
         {
-            var result = await target.Get<StoryNode>(ActorNode.BigBadWolf, null);
+            await Assert.ThrowsAsync(typeof(ArgumentNullException), () => target.Get<StoryNode>(ActorNode.BigBadWolf, null));
         }
 
-        [TestMethod]
+        [Fact]
         public async Task Get_T_Node_NodeType_ReturnsCorrectResult()
         {
-            var result = await target.Get<StoryNode>(ActorNode.BigBadWolf, MockNodeTypes.Story);
+            var result = await target.Get(ActorNode.BigBadWolf, MockNodeTypes.Story);
 
-            Assert.AreEqual(2, result.Count);
-            Assert.IsTrue(result.Contains(StoryNode.RedRidingHood));
-            Assert.IsTrue(result.Contains(StoryNode.ThreeLittlePigs));
+            Assert.Equal(2, result.Count);
+            Assert.True(result.Contains(StoryNode.RedRidingHood));
+            Assert.True(result.Contains(StoryNode.ThreeLittlePigs));
         }
 
         #endregion
