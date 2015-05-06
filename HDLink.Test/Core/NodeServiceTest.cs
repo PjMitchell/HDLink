@@ -12,7 +12,7 @@ namespace HDLink.Test.Core
         private ILinkRepository linkRepository;
         private INodeRepositoryFactory nodeRepoFactory;
 
-        public void Init()
+        public NodeServiceTest()
         {
             linkRepository = new MockLinkRepository();
             nodeRepoFactory = new MockNodeRepositoryFactory();

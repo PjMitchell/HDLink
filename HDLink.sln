@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink", "HDLink\HDLink.xproj", "{F6341982-2A8A-483D-97D3-8171B52CC7FD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Test", "HDLink.Test\HDLink.Test.xproj", "{65975C6D-D0CD-4D09-A7AF-2C00477415CC}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Tests", "HDLink.Test\HDLink.Tests.xproj", "{65975C6D-D0CD-4D09-A7AF-2C00477415CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
