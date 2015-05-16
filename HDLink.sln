@@ -7,6 +7,12 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink", "HDLink\HDLink.xpr
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Tests", "HDLink.Test\HDLink.Tests.xproj", "{65975C6D-D0CD-4D09-A7AF-2C00477415CC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C88234D0-E2A2-43F0-B8FD-A26C908FC628}"
+	ProjectSection(SolutionItems) = preProject
+		Build.bat = Build.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
