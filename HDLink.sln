@@ -9,6 +9,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Tests", "HDLink.Test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C88234D0-E2A2-43F0-B8FD-A26C908FC628}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		Build.bat = Build.bat
 		README.md = README.md
 	EndProjectSection
