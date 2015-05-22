@@ -1,6 +1,6 @@
 version: 1.0.{build}
-configuration: Release
-platform: Any CPU
+build_script:
+  - build.cmd --quiet --parallel verify
 build:
   project: HDLink.sln
   publish_nuget: true
