@@ -1,4 +1,5 @@
-version: 1.0.{build}
+init:
+  - git config --global core.autocrlf true
 build_script:
   - build.cmd --quiet --parallel verify
 build:
