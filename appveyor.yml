@@ -6,3 +6,4 @@ build:
   project: HDLink.sln
   publish_nuget: true
   verbosity: detailed
+test: off
