@@ -3,9 +3,9 @@
   "version": -9998,
   "projectFileDependencyGroups": {
     "": [
-      "HDLink >= 1.0.0-*",
       "xunit >= 2.1.0-*",
-      "xunit.runner.dnx >= 2.1.0-*"
+      "xunit.runner.dnx >= 2.1.0-*",
+      "HDLink >= 1.0.0-*"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": [
@@ -16,38 +16,6 @@
     ]
   },
   "libraries": {
-    "HDLink/1.0.0-CI00006": {
-      "serviceable": false,
-      "sha": "Ibwd99BbtfKnaaIw6/eh9+wMiTqGDXwvWYwblf7rCqvXI+INBmsRAVoSSK0Byy6ajmjYsMKufHuR4PY+h/OGtQ==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {},
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
-          ],
-          "compileAssemblies": [
-            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {},
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
-          ],
-          "compileAssemblies": [
-            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
-          ]
-        }
-      },
-      "files": [
-        "HDLink.1.0.0-CI00006.nupkg",
-        "HDLink.1.0.0-CI00006.nupkg.sha512",
-        "HDLink.nuspec",
-        "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
-      ]
-    },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc2": {
       "serviceable": false,
       "sha": "/4Z5es8TXCEn5sfzWz2uhUITmikgCfMAhehMJPQcSD2FRp2ooLTczDq3p4KOl+bcnsvaAu0aKrmdRgOvkrcwhw==",

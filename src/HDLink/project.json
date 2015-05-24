@@ -7,7 +7,6 @@
   "licenseUrl": "",
 
   "dependencies": {
-"xunit.runner.aspnet": "2.1.0-beta1-build60"
   },
 
   "frameworks" : {
