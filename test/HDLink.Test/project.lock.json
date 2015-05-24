@@ -16,6 +16,38 @@
     ]
   },
   "libraries": {
+    "HDLink/1.0.0-CI00006": {
+      "serviceable": false,
+      "sha": "Ibwd99BbtfKnaaIw6/eh9+wMiTqGDXwvWYwblf7rCqvXI+INBmsRAVoSSK0Byy6ajmjYsMKufHuR4PY+h/OGtQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
+          ],
+          "compileAssemblies": [
+            "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
+          ]
+        }
+      },
+      "files": [
+        "HDLink.1.0.0-CI00006.nupkg",
+        "HDLink.1.0.0-CI00006.nupkg.sha512",
+        "HDLink.nuspec",
+        "lib/portable-net45+win+wpa81+wp80/HDLink.dll"
+      ]
+    },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc2": {
       "serviceable": false,
       "sha": "/4Z5es8TXCEn5sfzWz2uhUITmikgCfMAhehMJPQcSD2FRp2ooLTczDq3p4KOl+bcnsvaAu0aKrmdRgOvkrcwhw==",
@@ -3063,75 +3095,6 @@
         "lib/Xamarin.iOS/xunit.execution.iOS-Universal.dll",
         "lib/Xamarin.iOS/xunit.execution.iOS-Universal.pdb",
         "lib/Xamarin.iOS/xunit.execution.iOS-Universal.xml"
-      ]
-    },
-    "xunit.runner.aspnet/2.1.0-beta1-build60": {
-      "serviceable": false,
-      "sha": "MIvM2Td4CnPx1gwlIiepPjt/6Bvv26mUvC0a/8TUI9HJG1uvHk426mGabOw7X0pPbjOkaKZpt4gcTbQH1QRZ9Q==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {
-            "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta3",
-            "Microsoft.Framework.TestAdapter": "1.0.0-beta3",
-            "Microsoft.Framework.TestHost": "1.0.0-beta3",
-            "xunit.runner.utility": "2.1.0-beta1-build2945"
-          },
-          "frameworkAssemblies": [
-            "System.Collections",
-            "System.ObjectModel",
-            "System.Reflection",
-            "System.Runtime",
-            "System.Text.RegularExpressions",
-            "System.Xml",
-            "System.Xml.Linq",
-            "mscorlib",
-            "System",
-            "System.Core",
-            "Microsoft.CSharp"
-          ],
-          "runtimeAssemblies": [
-            "lib/aspnet50/xunit.runner.aspnet.dll"
-          ],
-          "compileAssemblies": [
-            "lib/aspnet50/xunit.runner.aspnet.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {
-            "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta3",
-            "Microsoft.Framework.TestAdapter": "1.0.0-beta3",
-            "Microsoft.Framework.TestHost": "1.0.0-beta3",
-            "xunit.runner.utility": "2.1.0-beta1-build2945",
-            "System.Collections.Concurrent": "4.0.10-beta-22605",
-            "System.Console": "4.0.0-beta-22605",
-            "System.Diagnostics.Tools": "4.0.0-beta-22605",
-            "System.IO.FileSystem": "4.0.0-beta-22605",
-            "System.Linq": "4.0.0-beta-22605",
-            "System.ObjectModel": "4.0.10-beta-22605",
-            "System.Reflection": "4.0.10-beta-22605",
-            "System.Runtime.Extensions": "4.0.10-beta-22605",
-            "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-22605",
-            "System.Text.RegularExpressions": "4.0.10-beta-22605",
-            "System.Threading": "4.0.10-beta-22605",
-            "System.Xml.XDocument": "4.0.0-beta-22605"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/aspnetcore50/xunit.runner.aspnet.dll"
-          ],
-          "compileAssemblies": [
-            "lib/aspnetcore50/xunit.runner.aspnet.dll"
-          ]
-        }
-      },
-      "files": [
-        "xunit.runner.aspnet.2.1.0-beta1-build60.nupkg",
-        "xunit.runner.aspnet.2.1.0-beta1-build60.nupkg.sha512",
-        "xunit.runner.aspnet.nuspec",
-        "lib/aspnet50/xunit.runner.aspnet.dll",
-        "lib/aspnet50/xunit.runner.aspnet.xml",
-        "lib/aspnetcore50/xunit.runner.aspnet.dll",
-        "lib/aspnetcore50/xunit.runner.aspnet.xml"
       ]
     },
     "xunit.runner.dnx/2.1.0-beta2-build79": {
