@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace HDLink
+﻿namespace HDLink
 {
     /// <summary>
     /// Defines the type of Link between two Nodes
