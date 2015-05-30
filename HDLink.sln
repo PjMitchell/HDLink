@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E115093-47B5-4CB5-B77F-75556084F46B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{223B09C9-AB13-489D-A8F7-16285BB874C6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test-disabled", "test-disabled", "{223B09C9-AB13-489D-A8F7-16285BB874C6}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink", "src\HDLink\HDLink.xproj", "{DCE5E9B5-99D3-41EF-BC5D-DA3A58802EA0}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Tests", "test\HDLink.Tests\HDLink.Tests.xproj", "{E786247F-8B0D-45AB-918C-2637D9A666F1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Tests", "test-disabled\HDLink.Tests\HDLink.Tests.xproj", "{E786247F-8B0D-45AB-918C-2637D9A666F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
