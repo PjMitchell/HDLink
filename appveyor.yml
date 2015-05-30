@@ -8,6 +8,6 @@ build:
   verbosity: detailed
 test: off
 artifacts:
-  - path: artifacts\bin\HDLink\$(configuration)\*.nupkg
+  - path: artifacts\build\*.nupkg
 
   
