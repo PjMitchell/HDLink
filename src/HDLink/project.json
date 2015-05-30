@@ -1,6 +1,6 @@
 ﻿{
     "version": "1.0.0-*",
-    "description": "",
+    "description": "Library with tools for Link and Node data association",
     "authors": [ "Peter Mitchell" ],
     "tags": [ "" ],
     "projectUrl": "https://github.com/PjMitchell/HDLink",
