@@ -24,12 +24,12 @@ namespace HDLink
         /// <summary>
         /// Id used for Identifying Node for NodeType
         /// </summary>
-        public int Id { get; private set; }
+        public int Id { get; }
 
         /// <summary>
         /// Node type for Node
         /// </summary>
-        public INodeType NodeType { get; private set; }
+        public INodeType NodeType { get; }
 
 
         #region Equalities
@@ -49,19 +49,14 @@ namespace HDLink
         /// </summary>
         /// <param name="node">The node to compare to.</param>
         /// <returns>if the node is equal; otherwise, false.</returns>
-        public bool Equals(Node node)
-        {
-            return Id == node.Id && NodeType.Id == node.NodeType.Id;
-        }
+        public bool Equals(Node node) => Id == node.Id && NodeType.Id == node.NodeType.Id;
 
         /// <summary>
         /// Returns a hash code for the Node.
         /// </summary>
         /// <returns>A hash code for the specified Node.</returns>
-        public override int GetHashCode()
-        {
-            return hashcode;
-        }
+        public override int GetHashCode() => hashcode;
+
 
         private void SetHashCode()
         {

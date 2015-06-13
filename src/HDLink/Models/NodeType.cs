@@ -17,7 +17,7 @@
         /// <summary>
         /// Id used for Identifying INodeType
         /// </summary>
-        public int Id { get; private set; }
+        public int Id { get; }
 
         /// <summary>
         /// Determines whether the specified INodeType are equal.
@@ -25,29 +25,20 @@
         /// <param name="x">The first object of INodeType to compare.</param>
         /// <param name="y">The second object of INodeType to compare.</param>
         /// <returns> true if the specified INodeType are equal; otherwise, false.</returns>
-        public bool Equals(INodeType<T> x, INodeType<T> y)
-        {
-            return x.Id == y.Id;
-        }
+        public bool Equals(INodeType<T> x, INodeType<T> y) => x.Id == y.Id;
 
         /// <summary>
         /// Returns a hash code for the specified INodeType.
         /// </summary>
         /// <param name="obj">The INodeType for which a hash code is to be returned.</param>
         /// <returns>A hash code for the specified INodeType.</returns>
-        public int GetHashCode(INodeType<T> obj)
-        {
-            return obj.GetHashCode();
-        }
+        public int GetHashCode(INodeType<T> obj) => obj.GetHashCode();
 
         /// <summary>
         /// Returns a hash code for the INodeType.
         /// </summary>
         /// <returns>The hash code for INodeType</returns>
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        public override int GetHashCode() => Id.GetHashCode();
 
         /// <summary>
         /// Determines whether the object is equal to the NodeType.

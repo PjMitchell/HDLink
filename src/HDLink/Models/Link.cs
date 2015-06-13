@@ -17,15 +17,9 @@
         /// </summary>
         public B NodeB { get; set; }
 
-        INode ILink.NodeA
-        {
-            get { return NodeA; }
-        }
+        INode ILink.NodeA => NodeA;
 
-        INode ILink.NodeB
-        {
-            get { return NodeB; }
-        }
+        INode ILink.NodeB => NodeB;
 
         /// <summary>
         /// Strength of Link

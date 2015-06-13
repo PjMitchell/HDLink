@@ -32,17 +32,11 @@ namespace HDLink
         /// </summary>
         /// <param name="hierarchicalLevel">Hierarchical level</param>
         /// <returns>Ordered Enumerable of Elements</returns>
-        public IEnumerable<T> GetHierarchicalLevel(int hierarchicalLevel)
-        {
-            return source[hierarchicalLevel];
-        }
+        public IEnumerable<T> GetHierarchicalLevel(int hierarchicalLevel) => source[hierarchicalLevel];
 
         /// <summary>
         /// Gets List of Hierarchies
         /// </summary>
-        public List<int> Hierarchies
-        {
-            get { return source.Keys.ToList(); }
-        }
+        public List<int> Hierarchies => source.Keys.ToList();
     }
 }

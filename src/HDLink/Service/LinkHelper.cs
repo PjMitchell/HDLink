@@ -27,7 +27,7 @@ namespace HDLink
             {
                 if (node.Id == nodeToRemove.Id && node.NodeType.Id == nodeToRemove.NodeType.Id)
                     continue;
-                yield return node;
+                yield return node;               
             }
         }
 
