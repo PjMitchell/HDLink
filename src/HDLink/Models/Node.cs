@@ -10,13 +10,13 @@ namespace HDLink
         /// <summary>
         /// Simplest representation of a node
         /// </summary>
-        /// <param name="id">Node Id</param>
-        /// <param name="nodeType">Node Type</param>
+        /// <param name="nameof(id)">Node Id</param>
+        /// <param name="nameof(nodeType)">Node Type</param>
         public Node(int id, INodeType nodeType)
         {
             Id = id;
             if (nodeType == null)
-                throw new ArgumentNullException("nodeType");
+                throw new ArgumentNullException(nameof(nodeType));
             NodeType = nodeType;
             SetHashCode();
         }
@@ -36,7 +36,7 @@ namespace HDLink
         /// <summary>
         /// Determines whether the object is equal to the Node.
         /// </summary>
-        /// <param name="obj">The object to compare to.</param>
+        /// <param name="nameof(obj)">The object to compare to.</param>
         /// <returns>if the object is equal; otherwise, false.</returns>
         public override bool Equals(object obj)
         {
@@ -47,7 +47,7 @@ namespace HDLink
         /// <summary>
         /// Determines whether the node is equal to the instance.
         /// </summary>
-        /// <param name="node">The node to compare to.</param>
+        /// <param name="nameof(node)">The node to compare to.</param>
         /// <returns>if the node is equal; otherwise, false.</returns>
         public bool Equals(Node node) => Id == node.Id && NodeType.Id == node.NodeType.Id;
 

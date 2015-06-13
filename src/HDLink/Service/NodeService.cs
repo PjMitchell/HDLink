@@ -20,9 +20,9 @@ namespace HDLink
         public NodeService(ILinkRepository linkRepository, INodeRepositoryFactory repositoryFactory)
         {
             if (linkRepository == null)
-                throw new ArgumentNullException("linkRepository");
+                throw new ArgumentNullException(nameof(linkRepository));
             if (repositoryFactory == null)
-                throw new ArgumentNullException("repositoryFactory");
+                throw new ArgumentNullException(nameof(repositoryFactory));
             
             this.linkRepository = linkRepository;
             this.repositoryFactory = repositoryFactory;
@@ -36,7 +36,7 @@ namespace HDLink
         public IEnumerable<INode> Get(INode node)
         {
             if (node == null)
-                throw new ArgumentNullException("node");
+                throw new ArgumentNullException(nameof(node));
 
             var linksForNode = linkRepository.Get(node);
             var equalityComparer = new BaseNodeEqualityComparator();
@@ -57,9 +57,9 @@ namespace HDLink
         public IEnumerable<T> Get<T>(INode node, INodeType<T> nodeType) where T : INode
         {
             if (node == null)
-                throw new ArgumentNullException("node");
+                throw new ArgumentNullException(nameof(node));
             if (nodeType == null)
-                throw new ArgumentNullException("nodeType");
+                throw new ArgumentNullException(nameof(nodeType));
             var linksForNode = linkRepository.Get(node);
             var equalityComparer = new BaseNodeEqualityComparator();
 
