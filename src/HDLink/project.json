@@ -1,4 +1,4 @@
-﻿{
+{
     "version": "1.0.0-*",
     "description": "Library with tools for Link and Node data association",
     "authors": [ "Peter Mitchell" ],
@@ -7,16 +7,17 @@
     "licenseUrl": "",
 
     "dependencies": {
+        
     },
 
     "frameworks": {
         "dnx451": { },
         "dnxcore50": {
             "dependencies": {
-                "System.Collections": "4.0.10-beta-*",
-                "System.Linq": "4.0.0-beta-*",
-                "System.Threading": "4.0.10-beta-*",
-                "Microsoft.CSharp": "4.0.0-beta-*"
+                "Microsoft.CSharp": "4.0.0",
+                "System.Collections": "4.0.10",
+                "System.Linq": "4.0.0",
+                "System.Threading": "4.0.10"
             }
         }
     }
