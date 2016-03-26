@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C88234D0-E2A2-43F0-B8FD-A26C908FC628}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,6 +20,14 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink", "src\HDLink\HDLink.xproj", "{DCE5E9B5-99D3-41EF-BC5D-DA3A58802EA0}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Tests", "test-disabled\HDLink.Tests\HDLink.Tests.xproj", "{E786247F-8B0D-45AB-918C-2637D9A666F1}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Core", "src\HDLink.Core\HDLink.Core.xproj", "{ADDCDF63-F19B-4609-9D38-FE712364C767}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Provider.EntityFramework", "src\HDLink.Provider.EntityFramework\HDLink.Provider.EntityFramework.xproj", "{758701B2-84B2-4904-86B7-1F992B2AE330}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F700831C-EEDB-456A-8672-8B68D13732F7}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HDLink.Provider.EntityFramework.Tests", "test\HDLink.Provider.EntityFramework.Tests\HDLink.Provider.EntityFramework.Tests.xproj", "{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +73,54 @@ Global
 		{E786247F-8B0D-45AB-918C-2637D9A666F1}.Release|x64.Build.0 = Release|Any CPU
 		{E786247F-8B0D-45AB-918C-2637D9A666F1}.Release|x86.ActiveCfg = Release|Any CPU
 		{E786247F-8B0D-45AB-918C-2637D9A666F1}.Release|x86.Build.0 = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|ARM.Build.0 = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|x64.Build.0 = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Debug|x86.Build.0 = Debug|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|ARM.ActiveCfg = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|ARM.Build.0 = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|x64.ActiveCfg = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|x64.Build.0 = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|x86.ActiveCfg = Release|Any CPU
+		{ADDCDF63-F19B-4609-9D38-FE712364C767}.Release|x86.Build.0 = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|ARM.Build.0 = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|x64.Build.0 = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Debug|x86.Build.0 = Debug|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|ARM.ActiveCfg = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|ARM.Build.0 = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|x64.ActiveCfg = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|x64.Build.0 = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|x86.ActiveCfg = Release|Any CPU
+		{758701B2-84B2-4904-86B7-1F992B2AE330}.Release|x86.Build.0 = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|ARM.Build.0 = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|x64.Build.0 = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|ARM.ActiveCfg = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|ARM.Build.0 = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|x64.ActiveCfg = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|x64.Build.0 = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +128,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DCE5E9B5-99D3-41EF-BC5D-DA3A58802EA0} = {5E115093-47B5-4CB5-B77F-75556084F46B}
 		{E786247F-8B0D-45AB-918C-2637D9A666F1} = {223B09C9-AB13-489D-A8F7-16285BB874C6}
+		{ADDCDF63-F19B-4609-9D38-FE712364C767} = {5E115093-47B5-4CB5-B77F-75556084F46B}
+		{758701B2-84B2-4904-86B7-1F992B2AE330} = {5E115093-47B5-4CB5-B77F-75556084F46B}
+		{AF8504DD-B71E-4D24-973D-1A79FBF9AB34} = {F700831C-EEDB-456A-8672-8B68D13732F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
